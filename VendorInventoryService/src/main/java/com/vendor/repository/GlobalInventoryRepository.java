@@ -18,4 +18,6 @@ public interface GlobalInventoryRepository extends JpaRepository<GlobalInventory
 	@Query(value = "SELECT * FROM global_inventory WHERE medicine_name LIKE ?% and vendor_id =?;",nativeQuery = true)
 	List<GlobalInventory> findMedicineVendor(String medicineName,int vendorId);
 
+	GlobalInventory findByInventoryId(long inventoryId);
+
 }

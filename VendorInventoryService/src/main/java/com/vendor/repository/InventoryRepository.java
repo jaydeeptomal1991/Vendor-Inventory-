@@ -17,6 +17,8 @@ public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 	
 	@Query(value = "SELECT * FROM inventory WHERE medicine_name LIKE ?% and vendor_id =?;",nativeQuery = true)
 	List<Inventory> findMedicineVendor(String medicineName,int vendorId);
+
+	Inventory findByInventoryId(long inventoryId);
 	
 
 }

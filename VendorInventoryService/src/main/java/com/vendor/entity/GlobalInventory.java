@@ -1,40 +1,23 @@
 package com.vendor.entity;
 
 import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "GlobalInventory")
-public class GlobalInventory {
+public class GlobalInventory extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-	private Long globanInventoryId;
 	private String medicineName;      
 	private Date expiryDate;
 	private int quantity;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private int price;
 	private String brandName;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private int vendorId;
 	private String vendorName;
 	private String vendorAddress;
 	
-	public Long getGlobanInventoryId() {
-		return globanInventoryId;
-	}
-	public void setGlobanInventoryId(Long globanInventoryId) {
-		this.globanInventoryId = globanInventoryId;
-	}
+
 	public String getMedicineName() {
 		return medicineName;
 	}

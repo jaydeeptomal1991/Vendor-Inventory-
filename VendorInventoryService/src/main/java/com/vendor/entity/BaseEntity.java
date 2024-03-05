@@ -17,39 +17,39 @@ public class BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long inventoryId;
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date createdInventoryDate = new Date(System.currentTimeMillis());
-	private Date updatedInventoryDate;
+	private Date createdDate = new Date(System.currentTimeMillis());
+	private Date updatedDate;
 	private String addedById;
 	private String addedByName;
-
-	public Date getCreatedInventoryDate() {
-		return createdInventoryDate;
+	
+	
+	public long getInventoryId() {
+		return inventoryId;
 	}
-
-	public void setCreatedInventoryDate(Date createdInventoryDate) {
-		this.createdInventoryDate = createdInventoryDate;
+	public void setInventoryId(long inventoryId) {
+		this.inventoryId = inventoryId;
 	}
-
-	public Date getUpdatedInventoryDate() {
-		return updatedInventoryDate;
+	public Date getCreatedDate() {
+		return createdDate;
 	}
-
-	public void setUpdatedInventoryDate(Date updatedInventoryDate) {
-		this.updatedInventoryDate = updatedInventoryDate;
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
-
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
+	}
 	public String getAddedById() {
 		return addedById;
 	}
-
 	public void setAddedById(String addedById) {
 		this.addedById = addedById;
 	}
-
 	public String getAddedByName() {
 		return addedByName;
 	}
-
 	public void setAddedByName(String addedByName) {
 		this.addedByName = addedByName;
 	}
