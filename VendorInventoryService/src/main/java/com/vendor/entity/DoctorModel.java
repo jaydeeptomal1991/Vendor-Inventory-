@@ -1,7 +1,6 @@
 package com.vendor.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,13 +17,13 @@ public class DoctorModel {
 	private String doctorName;
 	private String specialist;
 	private String availableDate;
-	private String appointmentTime;
 	private int visitingFee;
+	private boolean isAvailable;
 	
 	@ManyToOne
 	@JoinColumn(name = "vendorId")
 	private VendorDoctor vendorDoctor;
-
+	
 	public int getDoctorId() {
 		return doctorId;
 	}
@@ -49,22 +48,6 @@ public class DoctorModel {
 		this.specialist = specialist;
 	}
 
-	public String getAvailableDate() {
-		return availableDate;
-	}
-
-	public void setAvailableDate(String availableDate) {
-		this.availableDate = availableDate;
-	}
-
-	public String getAppointmentTime() {
-		return appointmentTime;
-	}
-
-	public void setAppointmentTime(String appointmentTime) {
-		this.appointmentTime = appointmentTime;
-	}
-
 	public int getVisitingFee() {
 		return visitingFee;
 	}
@@ -82,13 +65,23 @@ public class DoctorModel {
 		this.vendorDoctor = vendorDoctor;
 	}
 
-	@Override
-	public String toString() {
-		return "DoctorModel [doctorId=" + doctorId + ", doctorName=" + doctorName + ", specialist=" + specialist
-				+ ", availableDate=" + availableDate + ", appointmentTime=" + appointmentTime + ", visitingFee="
-				+ visitingFee + ", vendorDoctor=" + vendorDoctor + "]";
-	} 
 	
+	public String getAvailableDate() {
+		return availableDate;
+	}
 
-	
+	public void setAvailableDate(String availableDate) {
+		this.availableDate = availableDate;
+	}
+
+	public boolean isAvailable() {
+		return isAvailable;
+	}
+
+	public void setAvailable(boolean isAvailable) {
+		this.isAvailable = isAvailable;
+	}
+
+
+
 }
